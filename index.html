@@ -91,23 +91,17 @@
           <img src="assets/img/Image 3.png" class="img-fluid" alt="">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Solutions Architect (Backend)</h3>
+          <h3>Senior Solutions Architect </h3>
           <p class="font-italic">
-            My name is Nitin Rohidas (if you're reading this you probably know that already). I did my Bachelor's degree in Information Technology (IT) and started as a Java developer
-			.My initial years of developer experience primarily involved working in Servlets and J2EE stack. I was very keen on working Defects :) which weren't easy
-			to solve and earned my quite a bit of respect in solving some tough defects of infrastructure. 
+            My name is Nitin Rohidas (if you're reading this you probably know that already). I did my Bachelor's degree in Information Technology (IT) and started as a Java developer in HSBC Software Devlopment India, Pune. The initial years of my developer experience primarily involved working in the Servlets and the J2EE stack. I was an above average developer and used to get the things done with good quality.I played the role of a defect prevention champion and also enjoyed critical defect fixings of frameworks and age old defects of the system. 
 			</p>
-			<p class="font-italic">I progressed my career as a Technical Lead by learning newer technologies
-like Spring , Spring boot , DustJs etc and worked on critical systems. I also developed deeper insights in to performance issues by using
-Dnatrace tooling to analyse high CPU programs which woudl save considerable dollars for my organization. My interest and thirst grew more and I aptly landed up in
-the Architecture Role guiding teams on their feature development and working couple of Sprint's ahead to design and deliver a claer architecture roadmap and design choices.
-Later on I further enhanced my skills by learning Kubernetes and Docker. This further propelled me to take up core enginnering projects like migrating from PCF to
-On-Prem Kubernetes. I lead the team to perform the POC and guided teams by various sessions and blog on Kubernetes.I am also well versed in the the 
-Onboarding domain supporting big clients both from Global Banking and Commercial banking.I currently look in to reference Architectures, standards , Governance & Digital transformation
-projects in the bank. </p>
+			<p class="font-italic">I progressed my career by learning newer technologies like Spring , Spring boot, DustJs & webservices etc , eventually playing the role of Technical lead.As a Technical Lead my job involved not just solving the problems of the developers but also to coach them to get better at their day to day work. I started taking up additional responsibility of SCRUM management as well, but didn't liked it that much. Delivered some critical projects in extreme pressure siuations which got the best out of me.I further became an expert on resolving performance issues by using Dynatrace tool to analyse high CPU programs which saved considerable $$$ for my organization. My design skills and deeper understanding of design patterns, MIcroservices exposure & frequent representation in the architecture and design approval meetings got me enough exposure to get into the Architecture Role.I was leading Architecture work for 3 teams on their architectural roadmaps and EPIC/Feature designs in the Scaled Agile Framework.I was also an active speaker in organzation Tech events , contributing to Innovation initatives & conducting many technical sessions for the developer community. I wasn't spared from interviewing candidates on Architecture and Leadership roles on weekends and weekdays for critical positions and new teams setup.Earned lot of appreciations on my work from the Home office Architecture team.
+			</p>
+			
+<p class="font-italic">After a while, I thought to go for a change as I was looking out for work on Cloud Technologies like AWS, GCP. Fortunately, I was able to seize opportunities by upskilling myself by self learning Docker and Kubernetes. I was now part of core enginnering projects like migration from PCF to On-Prem Kubernetes.I lead the migration effort by doing the POC and also guided teams by taking up sessions and publishing blogs on Kubernetes.As of today, am the SME in the the Onboarding & Data domain supporting big clients from Global & Commercial banking.I currently work as a Lead Architect and contribute in the Reference Architectures, API Standards , API Governance & Digital transformation, Workflow management & Containerzation space.I have done many clear choice papers and also working on publishing my White Paper on Observability Strategy </p>
+
 <p class="font-italic">
-My recent interests in Open Telemtry have gotten me in to the Observability space and I am helping teams building the right kind of observable systems.
-Do read my articles on medium !!
+My recent interests in Open Telemtry have gotten me in to the Observability space and I am helping teams understand how and learn OpenTelemtry. Do read my articles on medium !!
 </p>
           <div class="row">
             <div class="col-lg-6">
@@ -957,7 +951,7 @@ I’d gladly work with Nitin again.
     </div>
   </section><!-- End Contact Section -->
 
-
+ <a href="javascript:generatePDF()" id="downloadButton">Click to download</a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -970,7 +964,32 @@ I’d gladly work with Nitin again.
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js" ></script>
+  <script>
+        async function generatePDF() {
+            document.getElementById("downloadButton").innerHTML = "Currently downloading, please wait";
 
+            //Downloading
+            var downloading = document.getElementById("about");
+            var doc = new jsPDF('l', 'pt');
+
+            await html2canvas(downloading, {
+                allowTaint: true,
+                useCORS: true,
+                width: 800
+            }).then((canvas) => {
+                //Canvas (convert to PNG)
+                doc.addImage(canvas.toDataURL("image/png"), 'PNG', 5, 5, 800, 600);
+            })
+
+            doc.save("Document.pdf");
+
+            //End of downloading
+
+            document.getElementById("downloadButton").innerHTML = "Click to download";
+        }
+    </script>
 </body>
 
 </html>
