@@ -23,6 +23,9 @@
 
 }
 
+.yellow-text {
+      color: var(--primarybirght);
+   }
 
 
 .housingTheme1{
