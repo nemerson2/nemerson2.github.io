@@ -1,25 +1,26 @@
 
 :root {
-  --primarybirght: #ebb60a;
-  --primarylight: #ebb60a;
+  --primarybirght: #FFCC00;
+  --primarylight: #FFCC00;
 
   --white: #ffffff;
 
 
   --graygradient: rgba(255, 255, 255, 0.816);
 
-  
-  --darklightwhite: rgba(1, 1, 1, 0.72);
+  --darkheader: rgba(8, 8, 8, 0.72);
+  --darklightwhite: rgba(21, 21, 21, 0.72);
 
   --bodypanel: rgba(1, 1, 1, 0.344);
 
   
   --lightwhite: rgba(255, 255, 255, 0.08);
+  --darkheaderwhite: rgba(8, 8, 8, 0.98);
 
 
-  --panels: #444444;
+  --panels: green;
 
-  --bgpic : url("../../assets/img/web-portrait.gif");
+  --bgpic : url("../../assets/img/web-porrtrait.gif");
 
 }
 
@@ -39,7 +40,8 @@
 
   content: "";
   position: fixed;
-  background:  url("../../assets/img/web-portrait.gif") top right no-repeat;
+  background-color: black;
+ /** background:  url("../../assets/img/web-portrait.gif") top right no-repeat;**/
   background-size: cover;
   left: 0;
   right: 0;
@@ -88,7 +90,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -121,6 +123,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white);;
   line-height: 1;
   display: inline-block;
+  text-shadow: 1px 0px lightgray;
 }
 
 #header h2 {
@@ -130,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header h2 span {
-  color: var(--white);;
+  color: var(--primarybirght);;
   border-bottom: 2px solid var(--primarybirght);
   padding-bottom: 6px;
 }
@@ -322,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   top: 0;
   right: 0;
-  background: var(--darklightwhite);
+  background: var(--darkheaderwhite);
 }
 
 #header.header-top .social-links, #header.header-top h2 {
@@ -676,6 +679,7 @@ section .container {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  border-radius: 4px;
 }
 
 .resume .resume-item ul {
@@ -961,8 +965,16 @@ section .container {
   padding: 20px;
   width: 100%;
   background: var(--lightwhite);
+  border-radius: 15px;
 }
-
+.info-box {
+  color: whitesmoke;
+  padding: 20px;
+  width: 70%;
+  background: var(--lightwhite);
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
 .contact .info-box i.bx {
   font-size: 24px;
   color: var(--primarybirght);
